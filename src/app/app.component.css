@@ -1,0 +1,131 @@
+/* General container for chat */
+.chat-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #e3f2fd;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header section */
+.chat-header {
+  background-color: #1976d2;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+}
+
+/* Container for messages */
+.messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: #fff;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style for sent messages (on the right, light gray) */
+.message.sent {
+  align-self: flex-end;
+  background-color: #424040;
+  color: #ffffff;
+}
+
+.sent {
+  align-self: flex-end;
+  background-color: #424040;
+  color: #ffffff;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* Style for received messages (on the left, light green) */
+.message.received {
+  align-self: flex-start;
+  background-color: #81c784;
+  color: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* Style for the message text */
+.message-text {
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  font-size: 16px;
+  text-align: end;
+}
+
+/* Input area (message input + send button) */
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #fff;
+  border-top: 2px solid #ddd;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+}
+
+/* Input field for new message */
+.message-input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Send button */
+.send-button {
+  width: 15%;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.send-button:hover {
+  background-color: #1565c0;
+}
+
+/* Styling for empty message state */
+.messages-empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 18px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .input-area {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .message-input {
+    width: 70%;
+  }
+
+  .send-button {
+    width: 80%;
+    margin-top: 10px;
+  }
+}
