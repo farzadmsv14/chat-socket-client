@@ -19,16 +19,13 @@ export class WebsocketService {
     }
 
     console.log('Connecting to WebSocket server at:', url);
-
     this.ws = new WebSocket(url);
-
     this.ws.onopen = () => {
       console.log('WebSocket connected successfully');
     };
 
     this.ws.onmessage = (event) => {
       const data = event.data;
-
       if (data instanceof Blob) {
         const reader = new FileReader();
         reader.onloadend = () => {
